@@ -9,7 +9,7 @@ int main()
     cout << "Введите размер массива" << endl;
     cin >> n;
     cout << "Введите K элемент массива" << endl;
-    int flag = false;
+    bool flag = false;
     while (flag == false)
     {
         cin >> k;
