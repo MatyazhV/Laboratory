@@ -1,16 +1,18 @@
 ﻿
 #include <iostream>
 using namespace std;
-int n, n1,i;
+int n, n1, i;
 void nok(int a, int b, ...)
 {
     a -= 1;
     int* ptr = &b;
     i = *ptr;
+    cout << *ptr << " ";
     while (a > 0)
     {
         n1 = i;
         ptr++;
+        cout << *ptr << " ";
         n = *ptr;
         while (i % n1 != 0 || i % n != 0)
         {
@@ -18,6 +20,7 @@ void nok(int a, int b, ...)
         }
         a--;
     }
+    cout << endl;
     cout << i << endl;
 }
 int main()
