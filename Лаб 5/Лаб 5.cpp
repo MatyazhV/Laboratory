@@ -1,9 +1,7 @@
 ﻿#include <iostream>
 using namespace std;
 int n;
-int a[200][200];
-int b[200];
-void m(int** g, int u)
+void m(int** g, int* b, int u)
 {
     for (int i = 0; i < u; i++)
     {
@@ -94,6 +92,7 @@ int main()
     cout << "Введиите размер массива " << endl;
     cin >> n;
     int** a = new int* [n];
+    int* b = new int [n];
     for (int i = 0; i < n; i++)
     {
         a[i] = new int[n];
@@ -107,6 +106,6 @@ int main()
         }
         cout << endl;
     }
-    m(a, n);
+    m(a, b, n);
     return 0;
 }
