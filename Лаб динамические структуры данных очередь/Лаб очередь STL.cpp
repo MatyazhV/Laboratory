@@ -26,9 +26,9 @@ int main() {
 	cout << "Введите ключ" << endl;
 	cin >> d;
 	queue<char> qu; // Создали пустую очередь
+	cout << "Введите " << n <<" элементов" << endl;
 	for (int i = 0; i < n; i++)
 	{
-		cout << "Введите "<< i << " символ" << endl;
 		char a;
 		cin >> a;
 
@@ -37,7 +37,7 @@ int main() {
 	print(qu);
 	bool flag = false;
 	int j = 0;
-	while (j < n) { // Перенос элементов в массив
+	while (j < n) { // Удаление элемента с заданным ключем 
 		if (d == qu.front())
 		{
 			flag = true;
@@ -46,7 +46,7 @@ int main() {
 		}
 		else
 		{
-			arr[j] = qu.front();     // Забирает первый элемент без удаления
+			arr[j] = qu.front();     // Перенос элемента в массив
 			qu.pop(); // Удаление элемента из очереди
 			j++;
 		}
@@ -57,7 +57,7 @@ int main() {
 		cout << "Такого ключа не найдено" << endl;
 	else
 	{
-		cout << "Массив после удаления" << endl;
+		cout << "Очередь после удаления" << endl;
 		print(qu);                    // Печать очереди
 	}
 	cout << "Введите номер элемента, полсе которго нужно добавление" << endl;
@@ -71,25 +71,25 @@ int main() {
 	}
 	for (int i = 0; i < n; i++)
 	{								
-		arr[i] = qu.front();
-		qu.pop();
+		arr[i] = qu.front(); // Перенос элемента в массив
+		qu.pop();  // Удаление элемента
 	}
-	for (int i = 0; i <= s; i++)
+	for (int i = 0; i <= s; i++)  
 	{
-		qu.push(arr[i]);
+		qu.push(arr[i]);  // Перенос элементов до элемента с заданным номером из массива
 	}
-	for (int i = 1; i <= k; i++)
+	cout << "Введите " << k << " элементов" << endl;
+	for (int i = 1; i <= k; i++) // Добавление K элементов после элемента с заданным номером
 	{
-		cout << "Добавьте элемент номер " << i << endl;
 		char a;
 		cin >> a;
 		qu.push(a);
 	}
-	for (int i = s + 1; i < n; i++)
+	for (int i = s + 1; i < n; i++) 
 	{
-		qu.push(arr[i]);
+		qu.push(arr[i]);  // Перенос остальных элементов из массива
 	}
-	cout << "Массив после добавления " << endl;
+	cout << "Очередь после добавления " << endl;
 	print(qu);
 	for (int i = 0; i < n+k; i++)
 	{								
